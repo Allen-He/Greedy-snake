@@ -27,3 +27,5 @@ const Floor = tool.extends(Square);
 const Wall = tool.extends(Square);
 const SnakeHead = tool.single(Square);
 const SnakeBody = tool.extends(Square);
+const Snake = tool.single();
+const Food = tool.single(Square);

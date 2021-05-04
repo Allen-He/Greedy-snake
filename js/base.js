@@ -22,11 +22,11 @@ const tool = {
                 if(typeof instance === 'object') {
                     return instance;
                 }
-                Origin.apply(this, arguments);
+                Origin && Origin.apply(this, arguments);
                 instance = this;
             }
         })();
-        this.inherit(Target, Origin);
+        Origin && this.inherit(Target, Origin);
         return Target;
     }
 }
