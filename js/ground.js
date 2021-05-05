@@ -30,10 +30,6 @@ ground.init = function () {
 
     document.body.appendChild(this.viewContent);
 }
-
-ground.init();
-
-
 // 删除小方块
 ground.remove = function (x, y) {
     this.viewContent.removeChild(this.squareList[y][x].viewContent);
@@ -44,3 +40,5 @@ ground.append = function (square) {
     this.viewContent.appendChild(square.viewContent);
     this.squareList[square.y][square.x] = square;
 }
+
+// ground.init();

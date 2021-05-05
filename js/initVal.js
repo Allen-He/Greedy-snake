@@ -20,6 +20,12 @@ function Square(x, y, width, height, dom) {
     this.height = height;
     this.viewContent = dom || document.createElement('div');
 }
+Square.prototype.update = function (x, y,) {
+    this.x = x;
+    this.y = y;
+    this.viewContent.style.left = this.x * squareWidth + 'px';
+    this.viewContent.style.top = this.y * squareWidth + 'px';
+}
 
 // 创建各元素对象的构造函数
 const Ground = tool.single(Square);
@@ -29,3 +35,10 @@ const SnakeHead = tool.single(Square);
 const SnakeBody = tool.extends(Square);
 const Snake = tool.single();
 const Food = tool.single(Square);
+const Game = tool.single();
+
+const collideType = {
+    move: 'move',
+    eat: 'eat',
+    die: 'die'
+}
