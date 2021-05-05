@@ -8,7 +8,9 @@ game.init = function () {
 
     const btn = document.querySelector('.btn');
     btn.onclick = function () {
-        game.start();
+        if(game.timer == null) {
+            game.start();
+        }
     }
     
     createFood(); //初始化food
@@ -35,6 +37,7 @@ game.start = function () {
 }
 game.end = function () {
     clearInterval(this.timer);
+    this.timer = null;
     alert('游戏结束！您的得分为：' + this.score + ' 分！');
     location.reload(); //游戏失败后，重新加载
 }
